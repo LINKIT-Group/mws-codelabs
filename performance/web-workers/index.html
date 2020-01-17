@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Worker Demo</title>
+    <link href="vendor/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1 class="pt-5">Web Worker Demo</h1>
+    <div class="row">
+        <div class="col">
+            <p>The following is a demonstration of a blocking code. Click the "Calculate" button below to see the blocking operation in action.</p>
+            <p>
+                <i>Problem Statement: Calculate the average of sum for the given count of numbers.</i>
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <h3>Blocking Code</h3>
+            <p>(Using for loop to calculate)</p>
+
+            <input type="text" maxlength="9" id="value" placeholder="Enter a number"/>
+        </div>
+        <div class="col">
+            <p>Time Taken : <span id="time"></span></p>
+            <p>Average : <span id="avg"></span></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn mt-4 btn-primary" onclick="average()">Calculate</button>
+        </div>
+    </div>
+    <div class="row mt-4" id="myprogress" style="display: none;">
+        <div class="col">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                     aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4" id="worker-error" style="display: none; color: red;">
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-warning" onclick="showHiddenContent()">I'm blocked while calculation happens!</button>
+            <p id="hidden-content" class="pt-3" style="visibility: hidden;">Above button click toggled this content.</p>
+        </div>
+    </div>
+</div>
+
+<script src="scripts/main.js" async></script>
+</body>
+</html>
